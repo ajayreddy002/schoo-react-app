@@ -1,0 +1,249 @@
+@import 'src/variables/fonts.scss';
+
+.bm-item {
+    display: inline-block;
+
+    /* Our sidebar item styling */
+    text-decoration: none;
+    margin-bottom: 10px;
+    color: #d1d1d1;
+    transition: color 0.2s;
+    outline: none;
+}
+
+
+/* Change color on hover */
+.bm-item:hover {
+    color: white;
+}
+
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 36px;
+    top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+    background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+    height: 24px;
+    width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+    background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+    width: 250px;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+    fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+    color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+    background: transparent !important;
+}
+
+
+
+
+.side_nav_block {
+    display: flex;
+}
+
+.side_nav {
+    height: 100%;
+    width: 220px;
+    background-color: #1e1e2d;
+    opacity: 1;
+    position: fixed;
+    transition: 0.3s ease-in-out;
+}
+
+.side_nav_content {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+
+    ul {
+        margin: 0;
+        list-style: none;
+        padding: 15px 25px;
+
+        li {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            float: none;
+            padding: 0;
+            position: relative;
+            margin: 0;
+
+            .route_link {
+                padding: 9px 25px;
+                cursor: pointer;
+                display: flex;
+                -webkit-box-flex: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+                -webkit-box-align: stretch;
+                -ms-flex-align: stretch;
+                align-items: stretch;
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+                position: relative;
+                outline: none;
+                min-height: 44px;
+                outline: none !important;
+                color: #a2a3b7;
+                font-family: $para_font;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 15px;
+                .route_link_icon {
+                    -webkit-box-flex: 0;
+                    -ms-flex: 0 0 35px;
+                    flex: 0 0 35px;
+                    font-size: 1.3rem;
+                    color: #494b74;
+
+                    .MuiSvgIcon-root {
+                        height: 20px;
+                        width: 20px;
+                        margin-left: -2px;
+                        transition: fill 0.3s ease;
+                        fill: #494b74;
+                        margin-top: -2px;
+                    }
+                }
+            }
+
+            &:hover {
+                transition: background-color 0.3s;
+
+                .route_link {
+                    background-color: #1b1b28;
+                    color: #ffffff;
+                    .route_link_icon {
+                        .MuiSvgIcon-root {
+                            fill: #5d78ff;
+                        }
+                }
+                }
+            }
+        }
+    }
+}
+
+.main_content {
+    width: 100%;
+    margin-left: 220px;
+}
+
+.top_nav {
+    position: sticky;
+    height: 64px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eff0f6;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    box-shadow:0px 10px 30px 0px rgba(82, 63, 105, 0.08);
+    p {
+        float: right;
+        margin-right: 15px;
+        margin-top: 15px;
+    }
+}
+
+.route_content {
+    /* margin-left: 250px; */
+    background-color: #e8e9ef;
+    position: relative;
+    z-index: 1;
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+.logo_block {
+    padding: 0 25px;
+    height: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        color: #ffffff;
+        font-size: 22px;
+        font-family: $mini_header;
+    }
+}
+
+.svg_block {
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    background: none;
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    &:hover {
+        svg g [fill] {
+            fill: #5d78ff;
+        }
+    }
+
+    svg g [fill] {
+        transition: fill 0.3s ease;
+        fill: #494b74;
+
+    }
+}
+.displayNone {
+    .side_nav {
+        width: 60px;
+        .route_link {
+            display: none;
+        }
+        &:hover {
+            width: 220px;
+            transition: 0.3s ease-in-out;
+            .route_link {
+                display: block;
+            }
+        }
+    }
+}
+.displayBlock {
+    .side_nav {
+        display: block;
+    }
+}
